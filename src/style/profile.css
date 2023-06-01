@@ -1,0 +1,88 @@
+/* Profile */
+
+.profile-container {
+  display: grid;
+  grid-template-areas:
+    'img data'
+    'timeBtn timeBtn';
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 2fr 1fr;
+  margin-bottom: 4rem;
+}
+
+.profile-img {
+  background-color: var(--blue);
+  display: grid;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.profile-img img {
+  max-width: 60px;
+  border: 5px solid white;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+}
+
+.profile-data {
+  background-color: var(--blue);
+  color: var(--pale-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.profile-data :nth-child(1) {
+  font-weight: 400;
+}
+
+.profile-data :nth-child(2) {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.timeframe-buttons {
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  grid-area: timeBtn;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--dark-blue);
+}
+
+.timeframe-buttons button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--desaturated-blue);
+  font-size: 1.1rem;
+  padding: 1.5rem 0;
+}
+
+.timeframe-buttons button:hover {
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .profile-container {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    height: 65%;
+  }
+
+  .timeframe-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+    justify-content: space-evenly;
+  }
+
+  .timeframe-buttons button {
+    margin: 0.5rem 0;
+    padding: 0rem 0 0 2rem;
+  }
+}

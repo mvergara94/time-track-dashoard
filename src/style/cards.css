@@ -1,0 +1,114 @@
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 4.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 2rem;
+  background-color: var(--dark-blue);
+  border-radius: 0.5rem;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: var(--dark-blue-hover);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  border-radius: 0.5rem;
+  top: -50px;
+  left: 0px;
+  right: 0px;
+  bottom: 1px;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: top right;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+}
+
+.card[data-type='Work']::before {
+  background-image: url('../images/icon-work.svg');
+  background-color: var(--light-red-work);
+}
+.card[data-type='Play']::before {
+  background-image: url('../images/icon-play.svg');
+  background-color: var(--soft-blue-play);
+}
+.card[data-type='Study']::before {
+  background-image: url('../images/icon-study.svg');
+  background-color: var(--light-red-study);
+}
+.card[data-type='Exercise']::before {
+  background-image: url('../images/icon-exercise.svg');
+  background-color: var(--lime-green-exercise);
+}
+.card[data-type='Social']::before {
+  background-image: url('../images/icon-social.svg');
+  background-color: var(--violet-social);
+}
+.card[data-type='Self Care']::before {
+  background-image: url('../images/icon-self-care.svg');
+  background-color: var(--soft-orange-self-care);
+}
+
+/* Estilizando conteudo dos cards */
+.card div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card div h2 {
+  color: white;
+  font-weight: 500;
+}
+
+.card div a {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.card div a:hover {
+  filter: opacity(0.5);
+}
+
+.card div h3 {
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 300;
+}
+
+.card div p {
+  font-size: 0.9rem;
+}
+
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1.5rem;
+    box-sizing: border-box;
+    height: calc(65% - 50px);
+    margin-top: 50px;
+  }
+
+  .card div:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+    /* margin-top: 1rem; */
+    gap: 1rem;
+  }
+
+  .card div h3 {
+    flex-grow: 1;
+    font-size: 3rem;
+  }
+}

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+@import url('profile.css');
+@import url('cards.css');
+
+:root {
+  --primary-font: 'Rubik', sans-serif;
+
+  /* Primary Colors */
+  --blue: hsl(246, 80%, 60%);
+  --light-red-work: hsl(15, 100%, 70%);
+  --soft-blue-play: hsl(195, 74%, 62%);
+  --light-red-study: hsl(348, 100%, 68%);
+  --lime-green-exercise: hsl(145, 58%, 55%);
+  --violet-social: hsl(264, 64%, 52%);
+  --soft-orange-self-care: hsl(43, 84%, 65%);
+
+  /* Neutral Colors */
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --dark-blue-hover: hsl(235, 46%, 30%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+}
+
+body {
+  font-size: 18px;
+  font-family: var(--primary-font);
+  padding: 4rem 1rem;
+  background: var(--very-dark-blue);
+  color: var(--pale-blue);
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.timeframe-buttons .active {
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding: 0;
+  }
+  
+  .main-content {
+    max-width: 1024px;
+    grid-template-columns: auto 1fr;
+    min-height: 100vh;
+    align-items: center;
+    margin: 0 auto;
+    column-gap: 1.5rem;
+  }
+}
